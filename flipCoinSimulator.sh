@@ -54,15 +54,15 @@ do
 			;;
 		2)
 			noOfCoins=2
-         flipCoin $noOfFlips $noOfCoins
-         calculatePercentage
-         sortingPercentage
+			flipCoin $noOfFlips $noOfCoins
+			calculatePercentage
+			sortingPercentage
 			;;
 		3)
 			noOfCoins=3
-         flipCoin $noOfFlips $noOfCoins
-         calculatePercentage
-         sortingPercentage
+			flipCoin $noOfFlips $noOfCoins
+			calculatePercentage
+			sortingPercentage
 			;;
 		*)
 			echo "Invalid Choice!!!Enter valid choice"
