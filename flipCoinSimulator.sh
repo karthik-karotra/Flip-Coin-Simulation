@@ -27,8 +27,16 @@ function calculatePercentage() {
 	do
 		coin[$i]=`echo "scale=2; ${coin[$i]}*100/$noOfFlips" | bc`
 	done
-	echo "Keys ${!coin[@]}"
+	echo "Keys       ${!coin[@]}"
 	echo "Percentage ${coin[@]}"
+}
+
+function sortingPercentage() {
+	echo "Winning combination with percentage is : "
+	for i in ${!coin[@]}
+	do
+		echo "$i ${coin[$i]}"
+	done | sort -k2 -rn | head -1 
 }
 
 read -p "Do you want to play [y/n] : " input
@@ -40,19 +48,27 @@ do
 	case $choice in 
 		1)
 			noOfCoins=1
+			flipCoin $noOfFlips $noOfCoins
+			calculatePercentage
+			sortingPercentage
 			;;
 		2)
 			noOfCoins=2
+         flipCoin $noOfFlips $noOfCoins
+         calculatePercentage
+         sortingPercentage
 			;;
 		3)
 			noOfCoins=3
+         flipCoin $noOfFlips $noOfCoins
+         calculatePercentage
+         sortingPercentage
 			;;
 		*)
 			echo "Invalid Choice!!!Enter valid choice"
 			;;
 	esac
-	flipCoin $noOfFlips $noOfCoins
-	calculatePercentage
+
 	unset coin
 	read -p "Do you want to continue playing [y/n] : " input
 done
