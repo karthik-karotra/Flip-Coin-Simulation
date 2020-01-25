@@ -3,17 +3,17 @@ echo "Welcome to Flip coin Simulation"
 declare -A coin
 
 #variables
-headCount=1
-tailCount=1
+headCount=0
+tailCount=0
 
 read -p "How many times you want to flip coin: " n
 for((i=1;i<=$n;i++))
 do
    if [ $((RANDOM%2)) -eq 1 ]
    then
-      coin[head]=$((headCount++))
+      coin[head]=$((++headCount))
    else
-      coin[tail]=$((tailCount++))
+      coin[tail]=$((++tailCount))
    fi
 done
 echo "Keys ${!coin[@]}"
