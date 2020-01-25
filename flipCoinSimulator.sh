@@ -36,13 +36,16 @@ while [ $input == "y" ]
 do
 	declare -A coin
 	read -p "How many times you want to flip coin: " noOfFlips
-	read -p "Enter your choice : 1)Singlet Combination 2)Doublet Combination" choice
+	read -p "Enter your choice : 1)Singlet Combination 2)Doublet Combination 3)Triplet Combination" choice
 	case $choice in 
 		1)
 			noOfCoins=1
 			;;
 		2)
 			noOfCoins=2
+			;;
+		3)
+			noOfCoins=3
 			;;
 		*)
 			echo "Invalid Choice!!!Enter valid choice"
